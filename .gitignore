@@ -1,0 +1,8 @@
+*.dll
+RamenGo/bin/
+RamenGo/obj/
+packages/
+RamenGo/Web.Debug.config
+RamenGo/Web.Release.config
+RamenGo/ApplicationInsights.config
+.vs/config/applicationhost.config
