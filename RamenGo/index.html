@@ -1,10 +1,54 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Ramen Go</title>
 	<meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript">
+        /**
+         * 
+         * @param duration : timer in seconds
+         * @param display
+         */
+        function startTimer(duration, display)
+        {                        
+            var timer = duration, minutes, seconds;
+            setInterval(function ()
+            {
+                minutes = parseInt(timer / 60, 10)
+                seconds = parseInt(timer % 60, 10);
+                
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                var str = minutes + ":" + seconds;
+                $(display).text(minutes + ":" + seconds);
+
+                if (--timer < 0)
+                {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+    </script>
+
 </head>
 <body>
 
+
+    <div style="text-align:center">
+        <img alt="Player" />
+        <br />
+        <img alt="emptybowl" />
+        <br />
+        <img alt="bowlwithnoddle" />
+        <br />
+
+        <h2><span id="spanTime" class="label label-default">05:00</span></h2>
+        <button id="btn-timer" class="btn btn-success" onclick="startTimer(300, '#spanTime')"> Start</button>
+    </div>
 </body>
 </html>
