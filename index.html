@@ -4,17 +4,22 @@
     <title>Ramen Go</title>
 	<meta charset="utf-8" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>      
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-
+    <script type="text/javascript" src="Script/Ramen.js"></script>
     <script type="text/javascript">
+
+        var game = new Ramen();
+       
+        
         /**
          * 
          * @param duration : timer in seconds
          * @param display
          */
         function startTimer(duration, display)
-        {                        
+        {    
+            clearInterval(timer);
             var timer = duration, minutes, seconds;
             setInterval(function ()
             {
@@ -23,32 +28,51 @@
                 
                 minutes = minutes < 10 ? "0" + minutes : minutes;
                 seconds = seconds < 10 ? "0" + seconds : seconds;
-
+                
                 var str = minutes + ":" + seconds;
+
                 $(display).text(minutes + ":" + seconds);
 
-                if (--timer < 0)
+                timer = timer - 1;
+
+                if (timer < 0)
                 {
-                    timer = duration;
-                }
-            }, 1000);
+                    clearInterval(timer);
+                    timer = null;
+                }                      
+            }, 1000); //speed miliseconds
+        }
+
+        function resetTimer(display)
+        {
+            clearInterval(timer);
+
         }
     </script>
 
 </head>
 <body>
 
-
     <div style="text-align:center">
-        <img alt="Player" />
+        <img alt="Player" class="img"  />        
         <br />
         <img alt="emptybowl" />
         <br />
         <img alt="bowlwithnoddle" />
         <br />
 
-        <h2><span id="spanTime" class="label label-default">05:00</span></h2>
-        <button id="btn-timer" class="btn btn-success" onclick="startTimer(300, '#spanTime')"> Start</button>
+        <h2><span id="spanTime" class="label label-default">05:00</span></h2>        
+        
+        <div id="divPlates">
+            Plates : 
+        </div>
+        
+        <button id="btn-timer" class="btn btn-success" onclick="startTimer(10, '#spanTime')"> Start</button>
+        <button id="btn-reset" class="btn btn-success" onclick="resetTimer('#spanTime')"> Reset</button>
+
+        <br/>
+
+        <button id="btn-eat" class="btn btn-primary btn-lg" onclick="game.Eat('divPlates')">EAT</button>
     </div>
 </body>
 </html>
