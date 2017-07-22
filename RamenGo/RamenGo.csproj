@@ -107,6 +107,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Content Include="Script\notes.txt" />
+    <Content Include="Script\Ramen.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
