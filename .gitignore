@@ -6,3 +6,6 @@ RamenGo/Web.Debug.config
 RamenGo/Web.Release.config
 RamenGo/ApplicationInsights.config
 .vs/config/applicationhost.config
+RamenGo.AzureApi/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+RamenGo.AzureApi/obj/
+RamenGo.AzureApi/bin/

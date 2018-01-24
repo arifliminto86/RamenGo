@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RamenGo", "RamenGo\RamenGo.csproj", "{B066D25B-3349-46FA-85C9-9ACFB3177448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RamenGo.AzureApi", "RamenGo.AzureApi\RamenGo.AzureApi.csproj", "{4B5371F6-ABFE-48AB-B3A7-1D26A5B7FCFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{B066D25B-3349-46FA-85C9-9ACFB3177448}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B066D25B-3349-46FA-85C9-9ACFB3177448}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B066D25B-3349-46FA-85C9-9ACFB3177448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B5371F6-ABFE-48AB-B3A7-1D26A5B7FCFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B5371F6-ABFE-48AB-B3A7-1D26A5B7FCFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B5371F6-ABFE-48AB-B3A7-1D26A5B7FCFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B5371F6-ABFE-48AB-B3A7-1D26A5B7FCFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A63B8789-CC54-4138-B288-9983BF6A568B}
 	EndGlobalSection
 EndGlobal
