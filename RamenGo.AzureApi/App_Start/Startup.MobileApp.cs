@@ -48,15 +48,15 @@ namespace RamenGo.AzureApi
     {
         protected override void Seed(MobileServiceContext context)
         {
-            List<RamenPlayer> todoItems = new List<RamenPlayer>
+            List<RamenPlayer> ramenPlayers = new List<RamenPlayer>
             {
                 new RamenPlayer { Id = Guid.NewGuid().ToString(), Name = "First Player" },
                 new RamenPlayer { Id = Guid.NewGuid().ToString(), Name = "Second Player" }
             };
 
-            foreach (RamenPlayer todoItem in todoItems)
+            foreach (RamenPlayer ramenPlayer in ramenPlayers)
             {
-                context.Set<RamenPlayer>().Add(todoItem);
+                context.Set<RamenPlayer>().Add(ramenPlayer);
             }
 
             base.Seed(context);

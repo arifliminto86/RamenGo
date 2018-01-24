@@ -161,7 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Startup.MobileApp.cs" />
-    <Compile Include="Controllers\PlayerRamenController.cs" />
+    <Compile Include="Controllers\RamenPlayerController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DataObjects\RamenPlayer.cs" />
     <Compile Include="Models\MobileServiceContext.cs" />

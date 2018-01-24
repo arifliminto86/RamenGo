@@ -9,7 +9,7 @@ using RamenGo.AzureApi.Models;
 
 namespace RamenGo.AzureApi.Controllers
 {
-    public class PlayerRamenController : TableController<RamenPlayer>
+    public class RamenPlayerController : TableController<RamenPlayer>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
         {
@@ -19,9 +19,8 @@ namespace RamenGo.AzureApi.Controllers
         }
 
         // GET tables/RamenPlayer
-        public IQueryable<RamenPlayer> GetAllTodoItems()
+        public IQueryable<RamenPlayer> GetAll()
         {
-            
             return Query();
         }
 
@@ -29,6 +28,12 @@ namespace RamenGo.AzureApi.Controllers
         public SingleResult<RamenPlayer> GetTodoItem(string id)
         {
             return Lookup(id);
+        }
+
+        public SingleResult<RamenPlayer> GetById(int testId)
+        {
+            var a =  Query().SingleOrDefault(w => w.Name == "asdfi");
+           return SingleResult.Create<RamenPlayer>(new[] {a}.AsQueryable());
         }
 
         // PATCH tables/RamenPlayer/48D68C86-6EA6-4C25-AA33-223FC9A27959
