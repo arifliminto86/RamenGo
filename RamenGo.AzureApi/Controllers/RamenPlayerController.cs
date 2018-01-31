@@ -9,6 +9,9 @@ using RamenGo.AzureApi.Models;
 
 namespace RamenGo.AzureApi.Controllers
 {
+    /// <summary>
+    /// Table controller that only can be used for one method for POST, GET, PUT
+    /// </summary>
     public class RamenPlayerController : TableController<RamenPlayer>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
@@ -30,7 +33,7 @@ namespace RamenGo.AzureApi.Controllers
             return Lookup(id);
         }
 
-        public SingleResult<RamenPlayer> GetById(int testId)
+        public SingleResult<RamenPlayer> GetById(string testId)
         {
             var a =  Query().SingleOrDefault(w => w.Name == "asdfi");
            return SingleResult.Create<RamenPlayer>(new[] {a}.AsQueryable());

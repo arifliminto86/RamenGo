@@ -1,7 +1,6 @@
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
-using Microsoft.Azure.Mobile.Server;
 using Microsoft.Azure.Mobile.Server.Tables;
 using RamenGo.AzureApi.DataObjects;
 
@@ -26,7 +25,7 @@ namespace RamenGo.AzureApi.Models
         {
         }
 
-        public DbSet<RamenPlayer> TodoItems { get; set; }
+        public DbSet<RamenPlayer> Players { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
